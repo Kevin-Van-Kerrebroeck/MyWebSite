@@ -29,5 +29,13 @@ namespace MyWebSite.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MyWebSite.Models.Education> Educations { get; set; }
+
+        public System.Data.Entity.DbSet<MyWebSite.Models.Skill> Skills { get; set; }
+
+        public System.Data.Entity.DbSet<MyWebSite.Models.Job> Jobs { get; set; }
+
+        public System.Data.Entity.DbSet<MyWebSite.Models.Category> Categories { get; set; }
     }
 }

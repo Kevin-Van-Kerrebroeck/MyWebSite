@@ -1,0 +1,195 @@
+﻿@model MyWebSite.Models.CvModelView
+
+<div class="container about-me">
+    <div class="row">
+        @*Personal info here*@
+    </div>
+    <hr />@*Educations/////////////////////*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-5">
+                    <h2 class="my-header-cv">Opleidingen </h2>
+                </div>
+                <div class="col-sm-3">
+                    @*Html.ActionLink(" ", "Create", "Educations", null, new { @class = "glyphicon glyphicon-plus gi-2x actionlink-no-link" })*@
+                </div>
+            </div>
+            @foreach (var e in Model.Educations)
+            {
+                <div class="row">
+                    <div class="col-sm-2">
+                        @e.StartDate.Year <text> - </text> @e.EndDate.Year
+                    </div>
+                    <div class="col-sm-1">
+                        @*EMPTY SPACE*@
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @e.SchoolName
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @e.TrajectName
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @e.ObtainedDegree
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        @*<div class="row">
+                            <div class="col-sm-2">
+                               
+                                @using (Html.BeginForm("Delete", "Admin", new { id = e.ID }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn-no-button">
+                                        <span class="glyphicon glyphicon-remove gi-2x"></span>
+                                    </button>
+                                }
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.ActionLink(" ", "Edit", "Educations", new { id = e.ID }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-no-link" })
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+    </div>
+    <hr /> @*Jobs//////////////////////////////*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-5">
+                    <h2 class="my-header-cv">Jobs</h2>
+                </div>
+                <div class="col-sm-3">
+                    @*@Html.ActionLink(" ", "Create", "Jobs", null, new { @class = "glyphicon glyphicon-plus gi-2x actionlink-no-link" })*@
+                </div>
+            </div>
+            @foreach (var j in Model.Jobs)
+            {
+                <div class="row">
+                    <div class="col-sm-2">
+                        @j.StartDate.Year <text> - </text> @j.EndDate.Year
+                    </div>
+                    <div class="col-sm-1">
+                        @*EMPTY SPACE*@
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @j.CompanyName
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @j.ContractType
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @j.JobFunction
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                @j.JobDescription
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        @*<div class="row">
+                            <div class="col-sm-2">
+                              
+                                @using (Html.BeginForm("Delete", "Jobs", new { id = j.ID }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <button type="submit" class="btn-no-button">
+                                        <span class="glyphicon glyphicon-remove gi-2x"></span>
+                                    </button>
+                                }
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.ActionLink(" ", "Edit", "Jobs", new { id = j.ID }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-no-link" })
+                            </div>
+                        </div>*@
+                    </div>
+                </div>
+                <br />
+            }
+        </div>
+    </div>
+    <hr />@*Skills//////////////////////////////*@
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-5">
+                    <h2 class="my-header-cv">Vaardigheden</h2>
+                </div>
+                <div class="col-sm-3">
+                    @*@Html.ActionLink(" ", "Create", "Skills", null, new { @class = "glyphicon glyphicon-plus gi-2x actionlink-no-link" })*@
+                </div>
+            </div>
+            @foreach (var c in Model.Categories)
+            {
+                <h4 class="my-sub-header-cv">@c.CategoryName</h4>
+                foreach (var s in Model.Skills)
+                {
+                    if (s.SkillCategory.Id.Equals(c.Id))
+                    {
+                        <div class="row">
+                            <div class="col-xs-5">
+                                @s.SkillName
+                            </div>
+                            <div class="col-xs-4">
+                                @for (int i = 0; i < s.RatingNumber; i++)
+                                {
+                                    <span class="glyphicon glyphicon-star" style="color:lightgreen;"></span>
+                                }
+                                @for (int i = 0; i < (10 - s.RatingNumber); i++)
+                                {
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                }
+                            </div>
+                            <div class="col-xs-3">
+                                @*<div class="row">
+                                    <div class="col-sm-2">
+                                        
+                                        @using (Html.BeginForm("Delete", "Skills", new { id = s.Id }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            <button type="submit" class="btn-no-button">
+                                                <span class="glyphicon glyphicon-remove gi-2x"></span>
+                                            </button>
+                                        }
+                                    </div>
+                                    <div class="col-sm-2">
+                                        @Html.ActionLink(" ", "Edit", "Skills", new { id = s.Id }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-no-link" })
+                                    </div>
+                                </div>*@
+
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>
