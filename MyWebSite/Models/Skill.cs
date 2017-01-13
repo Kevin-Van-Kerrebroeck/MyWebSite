@@ -17,7 +17,7 @@ namespace MyWebSite.Models
         public string SkillName { get; set; }
 
         [Required(ErrorMessage = "Verplicht veld.")]
-        [Range(1,10,ErrorMessage ="Kies een getal tussen 1 en 10.")]
+        [Range(1,6,ErrorMessage ="Kies een getal tussen 1 en 6.")]
         public int RatingNumber { get; set; }
 
         [Required(ErrorMessage = "Verplicht veld.")]
