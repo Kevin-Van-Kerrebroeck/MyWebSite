@@ -12,14 +12,17 @@ namespace MyWebSite.Models
         [Key]
         public int Id { get; set; }
 
+        [Display(Name ="Skill")]
         [Required(ErrorMessage ="Verplicht veld.")]
         [StringLength(50,ErrorMessage ="Naam bevat te veel characters, max 50 characters toegestaan.")]
         public string SkillName { get; set; }
 
+        [Display(Name = "Score nummer")]
         [Required(ErrorMessage = "Verplicht veld.")]
         [Range(1,6,ErrorMessage ="Kies een getal tussen 1 en 6.")]
         public int RatingNumber { get; set; }
 
+        [Display(Name = "Skill Categorie")]
         [Required(ErrorMessage = "Verplicht veld.")]
         public Category SkillCategory { get; set; }
 

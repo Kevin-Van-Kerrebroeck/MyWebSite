@@ -43,7 +43,7 @@ namespace MyWebSite.Controllers
                 var message = new MailMessage();
                 message.To.Add(new MailAddress("xkevinmc@hotmail.com"));  // replace with valid value 
                 message.From = new MailAddress("sender@outlook.com");  // replace with valid value
-                message.Subject = "Your email subject";
+                message.Subject = "Contact From Kevinvankerrebroeck.com";
                 message.Body = string.Format(body, model.FromName, model.FromEmail, model.Message);
                 message.IsBodyHtml = true;
 
