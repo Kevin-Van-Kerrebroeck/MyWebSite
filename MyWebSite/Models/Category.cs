@@ -12,8 +12,8 @@ namespace MyWebSite.Models
         [Key]
         public int Id { get; set; }
 
-        [Display(Name = "Categorie Naam")]
-        [Required(ErrorMessage = "Verplicht veld.")]
+
+        [Required(ErrorMessage = "Verplicht veld."), Display(Name = "Categorie Naam")]
         [StringLength(50, ErrorMessage = "Naam bevat te veel characters, max 50 characters toegestaan.")]
         public string CategoryName { get; set; }
 
