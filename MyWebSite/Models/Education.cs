@@ -9,26 +9,25 @@ namespace MyWebSite.Models
         [Key]
         public int ID { get; set; }
 
-        [Display(Name = "Start Datum")]
-        [Required(ErrorMessage = "Verplicht veld.")]
+
+        [Required(ErrorMessage = "Verplicht veld."), Display(Name = "Start Datum")]
         public DateTime StartDate { get; set; }
 
-        [Display(Name = "Eind Datum")]
-        [Required(ErrorMessage = "Verplicht veld.")]
+
+        [Required(ErrorMessage = "Verplicht veld."), Display(Name = "Eind Datum")]
         public DateTime EndDate { get; set; }
 
-        [Display(Name = "Naam van de School")]
-        [Required(ErrorMessage = "Verplicht veld.")]
+        [Required(ErrorMessage = "Verplicht veld."), Display(Name = "Naam van de School")]
         [StringLength(50, ErrorMessage = "Naam bevat te veel characters, max 50 characters toegestaan.")]
         public string SchoolName { get; set; }
 
-        [Display(Name = "Cursus Naam")]
-        [Required(ErrorMessage = "Verplicht veld.")]
+        
+        [Required(ErrorMessage = "Verplicht veld."), Display(Name = "Cursus Naam")]
         [StringLength(50, ErrorMessage = "Naam bevat te veel characters, max 50 characters toegestaan.")]
         public string TrajectName { get; set; }
 
-        [Display(Name = "Behaald Diploma")]
-        [Required(ErrorMessage = "Verplicht veld.")]
+        
+        [Required(ErrorMessage = "Verplicht veld."), Display(Name = "Behaald Diploma")]
         [StringLength(50, ErrorMessage = "Naam bevat te veel characters, max 50 characters toegestaan.")]
         public string ObtainedDegree { get; set; }
 
