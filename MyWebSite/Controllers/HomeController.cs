@@ -21,6 +21,7 @@ namespace MyWebSite.Controllers
             ViewModelBuilder builder = new ViewModelBuilder();
             return View(builder.GetFullView(db));
         }
+
         public ActionResult About()
         {
 
