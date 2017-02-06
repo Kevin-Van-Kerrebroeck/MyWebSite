@@ -1,5 +1,5 @@
 ﻿@model MyWebSite.Models.EmailFormModel
-
+<div class="opa-0-80">
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -33,7 +33,7 @@
             </div>
         </div>
     }
-
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
