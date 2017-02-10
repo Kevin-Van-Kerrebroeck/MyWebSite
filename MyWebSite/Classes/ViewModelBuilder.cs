@@ -50,7 +50,7 @@ namespace MyWebSite.Classes
                 Categories = db.Categories.ToList(),
                 Educations = db.Educations.OrderByDescending(e => e.EndDate.Year).ToList(),
                 Jobs = db.Jobs.OrderByDescending(j => j.StartDate.Year).ToList(),
-                Skills = db.Skills.Include(s => s.SkillCategory).OrderByDescending(s => s.SkillName).ToList()
+                Skills = db.Skills.Include(s => s.SkillCategory).OrderBy(s => s.SkillName).ToList()
             };
 
             return View;
