@@ -1,6 +1,6 @@
 ﻿@model MyWebSite.Models.CvModelView
 
-<div class="container about-me">
+<div class="container about-me opa-1">
     <div class="row">
         @*Personal info here*@
     </div>
@@ -56,6 +56,7 @@
                                     </button>
                                 }
                             </div>
+                            <div class="col-sm-1"></div>
                             <div class="col-sm-2">
                                 @Html.ActionLink(" ", "Edit", "Educations", new { id = e.ID }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-no-link" })
                             </div>
@@ -123,6 +124,7 @@
                                     </button>
                                 }
                             </div>
+                            <div class="col-sm-1"></div>
                             <div class="col-sm-2">
                                 @Html.ActionLink(" ", "Edit", "Jobs", new { id = j.ID }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-no-link" })
                             </div>
@@ -148,6 +150,7 @@
                         <div class="col-sm-2">
                             @Html.ActionLink(" ", "Create", "Skills", null, new { @class = "glyphicon glyphicon-plus gi-2x actionlink-no-link" })
                         </div>
+                        <div class="col-sm-1"></div>
                         <div class="col-sm-2">
                             @Html.ActionLink(" ", "Create", "Categories", null, new { @class = "glyphicon glyphicon-plus gi-2x actionlink-red" })
                         </div>
@@ -177,6 +180,7 @@
                                     </button>
                                 }
                             </div>
+                            <div class="col-sm-1"></div>
                             <div class="col-sm-2">
                                 @Html.ActionLink(" ", "Edit", "Categories", new { id = c.Id }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-red actionlink-no-link" })
                             </div>
@@ -214,6 +218,7 @@
                                             </button>
                                         }
                                     </div>
+                                    <div class="col-sm-1"></div>
                                     <div class="col-sm-2">
                                         @Html.ActionLink(" ", "Edit", "Skills", new { id = s.Id }, new { @class = "glyphicon glyphicon-edit gi-2x actionlink-no-link" })
                                     </div>

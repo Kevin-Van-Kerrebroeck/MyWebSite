@@ -44,12 +44,13 @@ namespace MyWebSite.Classes
         /// <returns>Returns a instance of CvModelView</returns>
         private CvModelView GetAllData(ApplicationDbContext db)
         {
+
             CvModelView View = new CvModelView()
             {
                 Categories = db.Categories.ToList(),
-                Educations = db.Educations.ToList(),
-                Jobs = db.Jobs.ToList(),
-                Skills = db.Skills.Include(s => s.SkillCategory).ToList()
+                Educations = db.Educations.OrderByDescending(e => e.EndDate.Year).ToList(),
+                Jobs = db.Jobs.OrderByDescending(j => j.StartDate.Year).ToList(),
+                Skills = db.Skills.Include(s => s.SkillCategory).OrderByDescending(s => s.SkillName).ToList()
             };
 
             return View;
