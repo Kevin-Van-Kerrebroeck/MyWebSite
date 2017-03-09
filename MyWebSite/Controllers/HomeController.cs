@@ -4,6 +4,8 @@ using System.Web.Mvc;
 using System.Net.Mail;
 using System.Threading.Tasks;
 using System.Net;
+using System;
+using System.Web.Configuration;
 
 namespace MyWebSite.Controllers
 {
@@ -52,8 +54,8 @@ namespace MyWebSite.Controllers
                 {
                     var credential = new NetworkCredential
                     {
-                        UserName = "xkevinmc@hotmail.com",  // replace with valid value
-                        Password = "360TOTHEMAX."  // replace with valid value
+                        UserName = WebConfigurationManager.AppSettings["EmailAccount"],  // replace with valid value
+                        Password = WebConfigurationManager.AppSettings["EmailPassword"]  // replace with valid value
                     };
                     smtp.Credentials = credential;
                     smtp.Host = "smtp-mail.outlook.com";
