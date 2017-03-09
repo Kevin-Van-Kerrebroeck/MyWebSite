@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System;
 using System.Web.Configuration;
+using System.Configuration;
 
 namespace MyWebSite.Controllers
 {
@@ -54,8 +55,8 @@ namespace MyWebSite.Controllers
                 {
                     var credential = new NetworkCredential
                     {
-                        UserName = WebConfigurationManager.AppSettings["EmailAccount"],  // replace with valid value
-                        Password = WebConfigurationManager.AppSettings["EmailPassword"]  // replace with valid value
+                        UserName = ConfigurationManager.AppSettings["EmailAccount"],  // replace with valid value
+                        Password = ConfigurationManager.AppSettings["EmailPassword"]  // replace with valid value
                     };
                     smtp.Credentials = credential;
                     smtp.Host = "smtp-mail.outlook.com";
